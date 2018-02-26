@@ -50,7 +50,3 @@ class LMSClient:
             return False
 
         return not body['isError']
-
-
-if __name__ == '__main__':
-    lms = LMSClient()
