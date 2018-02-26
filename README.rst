@@ -33,3 +33,15 @@ pknulms-py
         print('쪽지 전송 실패')
 
     lms.logout()
+
+
+요구사항
+--------
+
+Python 2/3
+
+
+라이센스
+--------
+
+MIT
