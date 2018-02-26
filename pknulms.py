@@ -1,10 +1,12 @@
+# coding: utf-8
+
 import requests
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-class LMSClient:
+class LMSClient(object):
     def __init__(self):
         self.session = requests.Session()
 
@@ -22,7 +24,7 @@ class LMSClient:
         }
         r = self.session.post(url, headers=headers, data=data, verify=False)
 
-        return '로그인 정보가 일치하지 않습니다' not in r.text
+        return u'로그인 정보가 일치하지 않습니다' not in r.text
 
     def logout(self):
         url = 'http://lms.pknu.ac.kr/ilos/lo/logout.acl'
