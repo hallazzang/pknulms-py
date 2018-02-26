@@ -10,13 +10,13 @@ def get_content(path):
 
 setup(
     name='pknulms',
-    version='1.0.0',
+    version='1.0.2',
     url='https://github.com/hallazzang/pknulms-py',
     license='MIT',
     author='Hanjun Kim',
     author_email='hallazzang@gmail.com',
     description='Pukyong National University Smart-LMS Python client',
-    long_description=get_content('README.md'),
+    long_description=get_content('README.rst'),
     py_modules=['pknulms'],
     install_requires=[
         'requests',
