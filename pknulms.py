@@ -31,7 +31,26 @@ class LMSClient:
         }
         r = self.session.get(url, headers=headers)
 
+    def send_note(self, to, title, content):
+        url = 'http://lms.pknu.ac.kr/ilos/message/insert_pop.acl'
+        headers = {
+            'Referer': 'http://lms.pknu.ac.kr/ilos/message/insert_pop_form.acl',
+        }
+        data = {
+            'TITLE': title,
+            'RECV_IDs': to + '^',
+            'CONTENT': content,
+            'encoding': 'utf-8',
+        }
+        r = self.session.post(url, headers=headers, data=data, allow_redirects=False)
+
+        try:
+            body = r.json()
+        except ValueError:
+            return False
+
+        return not body['isError']
+
 
 if __name__ == '__main__':
     lms = LMSClient()
-    print(lms.logout())
