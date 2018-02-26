@@ -24,7 +24,14 @@ class LMSClient:
 
         return '로그인 정보가 일치하지 않습니다' not in r.text
 
+    def logout(self):
+        url = 'http://lms.pknu.ac.kr/ilos/lo/logout.acl'
+        headers = {
+            'Referer': 'http://lms.pknu.ac.kr/ilos/main/main_form.acl',
+        }
+        r = self.session.get(url, headers=headers)
+
 
 if __name__ == '__main__':
     lms = LMSClient()
-    print(lms.login('XXX', 'XXX'))
+    print(lms.logout())
