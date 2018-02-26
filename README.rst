@@ -3,6 +3,15 @@ pknulms-py
 
 부경대학교 Smart-LMS Python 클라이언트
 
+
+설치
+----
+
+.. code::
+
+    $ pip install pknulms
+
+
 사용법
 ------
 
