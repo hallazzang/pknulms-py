@@ -44,7 +44,8 @@ class LMSClient(object):
             'CONTENT': content,
             'encoding': 'utf-8',
         }
-        r = self.session.post(url, headers=headers, data=data, allow_redirects=False)
+        r = self.session.post(
+            url, headers=headers, data=data, allow_redirects=False)
 
         try:
             body = r.json()
